@@ -23,11 +23,12 @@ class Database {
 
   public function query($sql){
       $this->_result = $this->_link->query($sql);
-      if($this->_result->num_rows != 0){
+      if($this->_result->num_rows > 1){
         $rows = $this->_result->fetch_all(MYSQLI_ASSOC);
-        return $rows;
+      } else {
+        $rows = $this->_result->fetch_assoc();
       }
-
+      return $rows;
   }
 
   public function numRows(){
