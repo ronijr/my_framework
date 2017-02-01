@@ -33,4 +33,5 @@ class App {
       return $url = explode('/',filter_var(rtrim($_GET['url'],'/'),FILTER_SANITIZE_URL));
     }
   }
+
 }

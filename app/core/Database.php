@@ -23,11 +23,23 @@ class Database {
 
   public function query($sql){
       $this->_result = $this->_link->query($sql);
-      if($this->_result->num_rows > 1){
-        $rows = $this->_result->fetch_all(MYSQLI_ASSOC);
-      } else {
-        $rows = $this->_result->fetch_assoc();
+      $str = explode(" ", $sql);
+      switch($str[0]){
+        case "INSERT":
+            $rows = true;
+          break;
+        case "SELECT":
+            if($this->_result->num_rows > 1 ){
+              $rows = $this->_result->fetch_all(MYSQLI_ASSOC);
+            } else {
+              $rows = "";
+            }
+          break;
+        default:
+          break;
+
       }
+
       return $rows;
   }
 
