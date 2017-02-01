@@ -16,7 +16,7 @@ class Home extends Controller {
     $model = $this->model('Users');
     $data = array(
             'result' => $model->getUser('users'),
-            'hitung' => $model->num()
+      
           );
     //$data = array('username'=>'Roni');
     $this->view('home/test',$data);

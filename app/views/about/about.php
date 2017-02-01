@@ -9,6 +9,7 @@
 <body>
 <div class="container">
   <h1>Coba Inputan</h1>
+  <h5 style="color:red;"><?php echo isset($data['pesan']) ? $data['pesan'] : ''; ?></h5>  
   <form action="<?php echo base_url(); ?>about/inputData" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-4">

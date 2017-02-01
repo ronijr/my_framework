@@ -2,8 +2,13 @@
 <html>
   <head>
       <title>Test</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" type="text/css"/>
   </head>
 <body>
+<div class="container">
+<h4><?php echo isset($data['pesan']) ? $data['pesan'] : ''; ?></h4>  
 <table>
   <thead>
       <tr>
@@ -34,7 +39,8 @@
        ?>
     </tbody>
 </table>
-
-<?php echo $data['hitung']; ?>
+</div>
+<script src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

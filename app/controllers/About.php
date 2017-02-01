@@ -25,6 +25,12 @@ class About extends Controller{
 
       if($_POST['submit'] == true){
 
+        if(empty($username) OR empty($password) OR empty($firstname) OR empty($email)){
+            $data=array(
+                'pesan' => 'Data Masih kosong bro',
+            );
+            $this->view('about/about', $data);
+        }else{
           $data= array(
             'username' => $username,
             'password' => $password,
@@ -33,9 +39,18 @@ class About extends Controller{
             'email' => $email
 
           );
-
           $model->insertUser($data);
+          $data_1=array(
+            'pesan' => 'sukses bro',
+            'result' => ''
+          );
+          header("Location:".base_url()."home/test");
+        }
+
       }
+
+
+
 
   }
 }
