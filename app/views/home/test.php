@@ -8,16 +8,18 @@
   </head>
 <body>
 <div class="container">
-<h4><?php echo isset($data['pesan']) ? $data['pesan'] : ''; ?></h4>  
-<table>
+<h4 id="tables-hover-rows" class="text-center">Table Users</h4>
+<hr>
+<div class="bs-example" data-example-id="hoverable-table">
+<table class="table table-hover table-striped">
   <thead>
       <tr>
-          <td>No</td>
-          <td>Username</td>
-          <td>Password</td>
-          <td>First Name</td>
-          <td>Last Name</td>
-          <td>Active</td>
+          <th>No</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Active</th>
       </tr>
     </thead>
     <tbody>
@@ -39,6 +41,7 @@
        ?>
     </tbody>
 </table>
+</div>
 </div>
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" type="text/javascript"></script>
